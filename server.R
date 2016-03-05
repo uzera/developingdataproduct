@@ -1,9 +1,9 @@
 library(shiny)
-diabetsRisk <- function(glucose) glucose / 200
+TempConverter <- function(fahrenheit) (fahrenheit-32) / 1.8
 
 shinyServer(
   function(input, output) {
-    output$inputValue <- renderPrint({input$glucose})
-    output$preciction <- renderPrint({diabetsRisk(input$glucose)})
+    output$inputValue <- renderPrint({input$fahrenheit})
+    output$prediction <- renderPrint({TempConverter(input$fahrenheit)})
   }
 )
