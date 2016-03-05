@@ -2,18 +2,19 @@ library(shiny)
 
 shinyUI(
   pageWithSidebar(
-    headerPanel("Diabets prediction"),
+    headerPanel("Fahrenheit to Celsius Converter"),
     
     sidebarPanel(
-      numericInput('glucose', 'Glucose mg/dl',90,min = 50, max = 200, step = 5),
+      numericInput('fahrenheit','Choose the temperature in Fehrenheit:',70,min = 5,max = 110,step = 5),
       submitButton('Submit')
     ),
     mainPanel(
-      h3('Results of prediction'),
-      h4('You entered'),
+      h3('Convert to Celsius'),
+      h4('You entered this temperature in Fahrenheit:'),
       verbatimTextOutput("inputValue"),
-      h4('Which resulted in a prediction of'),
-      verbatimTextOutput("preciction")
+      h4('which equals to this number in Celsius:'),
+      verbatimTextOutput("prediction")
     )
   )
 )
+
